@@ -1,0 +1,29 @@
+.line,
+.text,
+.reset {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.reset,
+.text,
+#inp,
+#btn {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    padding: 5px;
+}
+#btn {
+    background: chartreuse;
+}
+.reset {
+    background: coral;
+}
+#inp {
+    background: #fbfbfb;
+}
+.text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+}

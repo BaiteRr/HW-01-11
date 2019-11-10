@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Title</title>
+</head>
+
+<body>
+<button class="btn" id="btn" onmousedown="upCounter()">Click!</button>
+<div class="text" id="text">1</div>
+<button class="reset" onmousedown="reset()">Reset!</button>
+</body>
+
+<script>
+    function getText() {
+        return document.getElementById("text").innerHTML;
+    }
+    function setText(value) {
+        document.getElementById("text").innerHTML = value;
+    }
+    function upCounter() {
+        let count = getText();
+        setText(++count);
+    }
+    function reset() {
+        setText(1);
+    }
+</script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Title</title>
+</head>
+<body>
+<div class="input">
+    <div class="line">
+        <div class="text" id="">Сколько чисел Фибоначи вычислить? </div>
+        <input type="text" id="inp">
+        <button class="btn" id="btn" onmousedown="fibonach()">Вичислить</button>
+    </div>
+    <div class="text" id="text"></div>
+    <button class="reset" onmousedown="reset()">Очистить!</button>
+</div>
+</body>
+<script>
+    function getText() {
+        return document.getElementById("text").innerHTML;
+    }
+    function setText(value) {
+        document.getElementById("text").innerHTML = value;
+    }
+    function setValue(value) {
+        document.getElementById("inp").value = value;
+    }
+    function getValue() {
+        return document.getElementById("inp").value;
+    }
+    function fibonach() {
+        setText("");
+        let number = getValue();
+        if (+number != number) {
+            setText("Ошибка, нужно вводить число");
+            return;
+        }
+        toDoFibonachNumber(number);
+    }
+    function toDoFibonachNumber(number) {
+        --number;
+        setText("1, ");
+        toDoFibonach(number);
+    }
+    function toDoFibonach(number, first = 0, second = 1) {
+        count = Number(first) + Number(second);
+        setText(getText() + count + ", ");
+        first = second;
+        second = count;
+        if (--number > 0)
+            toDoFibonach(number, first, second);
+    }
+    function reset() {
+        setText("");
+        setValue("");
+    }
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Title</title>
+</head>
+<body>
+<div class="input">
+    <div class="line">
+        <div class="text" id="">Бинарный поиск элементов в массиве чисел Фибоначи</div>
+        <input type="text" id="inp_count" placeholder="Колличество элементов в массиве">
+        <input type="text" id="inp_el" placeholder="Значения которое нужно найти">
+        <button class="btn" id="btn" onmousedown="binarySearch()">Найти</button>
+    </div>
+    <div class="text" id="text"></div>
+    <button class="reset" onmousedown="reset()">Очистить!</button>
+</div>
+</body>
+<script src="model.js"></script>
+<script src="logic.js"></script>
+<script src="controller.js"></script>
+</html>

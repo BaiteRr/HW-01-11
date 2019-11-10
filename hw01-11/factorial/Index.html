@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Title</title>
+</head>
+<body>
+<div class="input">
+    <div class="line">
+        <input type="text" id="inp">
+        <button class="btn" id="btn" onmousedown="factorial()">Факториал</button>
+    </div>
+    <div class="text" id="text"></div>
+    <button class="reset" onmousedown="reset()">Очистить!</button>
+</div>
+</body>
+<script>
+    function getText() {
+        return document.getElementById("inp").innerHTML;
+    }
+    function setText(value) {
+        document.getElementById("text").innerHTML = value;
+    }
+    function setValue(value) {
+        document.getElementById("inp").value = value;
+    }
+    function getValue() {
+        return document.getElementById("inp").value;
+    }
+    function factorial() {
+        let number = getValue();
+        if (+number != number) {
+            setText("Ошибка, нужно вводить число");
+            return;
+        }
+        toDoFactorial(number);
+    }
+    function toDoFactorial(number, save = 1) {
+        save = save * number;
+        setText(save);
+        if (number > 2)
+            toDoFactorial(--number, save);
+    }
+    function reset() {
+        setText("");
+        setValue("");
+    }
+</script>
+</html>
